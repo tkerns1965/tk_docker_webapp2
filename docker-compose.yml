@@ -1,1 +1,38 @@
+version: '3'
 
+services:
+  mariadb:
+    build: mariadb
+    image: img_tkdw2_mariadb
+    container_name: cnt_tkdw2_mariadb
+    volumes:
+      - vol_tkdw2_mariadb_data:/var/lib/mysql
+      - vol_tkdw2_mariadb_socket:/mariadb/socket
+  python:
+    build: python
+    image: img_tkdw2_python
+    container_name: cnt_tkdw2_python
+    volumes:
+      - vol_tkdw2_mariadb_socket:/mariadb/socket
+      - vol_tkdw2_python_socket:/python/socket
+    depends_on:
+      - mariadb
+  nginx:
+    build: nginx
+    image: img_tkdw2_nginx
+    container_name: cnt_tkdw2_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - vol_tkdw2_python_socket:/python/socket
+    depends_on:
+      - mariadb
+      - python
+
+volumes:
+  vol_tkdw2_mariadb_data:
+    external: true
+  vol_tkdw2_mariadb_socket:
+    external: true
+  vol_tkdw2_python_socket:
+external: true
