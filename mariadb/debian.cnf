@@ -1,0 +1,15 @@
+# Automatically generated for Debian scripts. DO NOT TOUCH!
+[client]
+host     = localhost
+user     = debian-sys-maint
+password = dcVTd15AHskcprcg
+# socket   = /var/run/mysqld/mysqld.sock
+socket   = /mariadb/socket/mariadb.sock
+
+[mysql_upgrade]
+host     = localhost
+user     = debian-sys-maint
+password = dcVTd15AHskcprcg
+# socket   = /var/run/mysqld/mysqld.sock
+socket   = /mariadb/socket/mariadb.sock
+basedir = /usr
