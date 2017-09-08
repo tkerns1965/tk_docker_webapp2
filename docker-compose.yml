@@ -35,4 +35,4 @@ volumes:
   vol_tkdw2_mariadb_socket:
     external: true
   vol_tkdw2_python_socket:
-external: true
+    external: true
