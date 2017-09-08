@@ -1,4 +1,5 @@
 from project import app
+from project.models import Company
 
 @app.route("/")
 def hello():
