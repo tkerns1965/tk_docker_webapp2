@@ -4,7 +4,7 @@ RUN apt update && \
     apt install -y build-essential python-dev && \
     pip install uwsgi
 
-ENV INSTALL_PATH /python/project
+ENV INSTALL_PATH /python/app
 
 RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
@@ -13,5 +13,6 @@ COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
 COPY run.py uwsgi.ini ./
+COPY project/ project/
 
 ENTRYPOINT ["uwsgi", "--ini", "uwsgi.ini"]
