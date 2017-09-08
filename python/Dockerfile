@@ -4,7 +4,7 @@ RUN apt update && \
     apt install -y build-essential python-dev && \
     pip install uwsgi
 
-ENV INSTALL_PATH /python/app
+ENV INSTALL_PATH /python/project
 
 RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
