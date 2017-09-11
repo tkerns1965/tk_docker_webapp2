@@ -8,6 +8,6 @@ def show_company():
     # company_no = Company.get(Company.company_no == 10)
     # company_no = 11
     return render_template("show_company.html",
-                           title="Home"
+                           title="Home",
                            user=user)
     # return "Hello!"
