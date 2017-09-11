@@ -4,10 +4,10 @@ from project.models import Company
 
 @app.route("/")
 def show_company():
-    # user = {'nickname': 'Tony'}
+    user = {'nickname': 'Tony'}
     # company_no = Company.get(Company.company_no == 10)
     # company_no = 11
-    # return render_template("show_company.html",
-    #                        title="Home"
-    #                        user=user)
-    return "Hello!"
+    return render_template("show_company.html",
+                           title="Home"
+                           user=user)
+    # return "Hello!"
