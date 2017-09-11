@@ -18,7 +18,7 @@ class Class(BaseModel):
     equipment_note = CharField(null=True)
 
     class Meta:
-        db_table = 'class_id'
+        db_table = 'class'
         indexes = (
             (('employee_id', 'class_code', 'class_note', 'equipment_code', 'equipment_note'), True),
         )
@@ -36,7 +36,7 @@ class Employee(BaseModel):
     timesheet_id = IntegerField()
 
     class Meta:
-        db_table = 'employee_id'
+        db_table = 'employee'
         indexes = (
             (('timesheet_id', 'employee_code', 'employee_note'), True),
         )
