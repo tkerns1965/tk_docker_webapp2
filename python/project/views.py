@@ -1,6 +1,6 @@
 from flask import render_template
 from project import app
-from project.models import Company
+from project.models.tables import Company
 
 @app.route("/")
 def show_company():
