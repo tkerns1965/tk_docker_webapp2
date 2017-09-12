@@ -1,3 +1,4 @@
+from project import database
 from peewee import *
 
 class BaseModel(Model):
