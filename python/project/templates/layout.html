@@ -2,14 +2,14 @@
 <html>
   <head>
     <title>{{ title }} - timesheets</title>
-    <link rel="stylesheet" href="{{ url_for('static/lib', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap.min.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
   </head>
   <body>
     <h1>Hello, {{ user.nickname }}!</h1>
     <h2>Company = {{ company.company_no }}!</h2>
-    <script src="{{ url_for('static/lib', filename='jquery-3.2.1.slim.min.js') }}"></script>
-    <script src="{{ url_for('static/lib', filename='popper.min.js') }}"></script>
-    <script src="{{ url_for('static/lib', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/jquery-3.2.1.slim.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/bootstrap.min.js') }}"></script>
   </body>
 </html>
