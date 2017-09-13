@@ -25,6 +25,11 @@ RUN pip install -r requirements.txt
 COPY config.py run.py uwsgi.ini ./
 COPY project/ project/
 
-RUN cd /python/app/project/static
+RUN mkdir /python/app/project/static/lib \
+        && cd /python/app/project/static/lib \
+        && ln -s /downloads/jquery-3.2.1.slim.min.js jquery-3.2.1.slim.min.js \
+        && ln -s /downloads/popper.min.js popper.min.js \
+        && ln -s /downloads/bootstrap/js/bootstrap.min.js bootstrap.min.js \
+        && ln -s /downloads/bootstrap/css/bootstrap.min.css bootstrap.min.css
 
 ENTRYPOINT ["uwsgi", "--ini", "uwsgi.ini"]
