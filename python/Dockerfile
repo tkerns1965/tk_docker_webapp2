@@ -6,6 +6,7 @@ RUN apt-get update \
                 python-dev \
                 unzip \
         && pip install uwsgi \
+        && mkdir /downloads \
         && cd /downloads/ \
         && wget https://code.jquery.com/jquery-3.2.1.slim.min.js \
         && wget https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js \
