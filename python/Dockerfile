@@ -9,7 +9,7 @@ RUN apt-get update \
         && wget -P /downloads https://code.jquery.com/jquery-3.2.1.slim.min.js \
         && wget -P /downloads https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js \
         && wget -P /downloads https://github.com/twbs/bootstrap/releases/download/v4.0.0-beta/bootstrap-4.0.0-beta-dist.zip \
-        && unzip /downloads/bootstrap-4.0.0-beta-dist.zip \
+        && unzip /downloads/bootstrap-4.0.0-beta-dist.zip -d /downloads \
         && rm /downloads/bootstrap-4.0.0-beta-dist.zip
 
 ENV INSTALL_PATH /python/app
