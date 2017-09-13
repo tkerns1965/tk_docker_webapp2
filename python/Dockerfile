@@ -11,7 +11,7 @@ RUN apt-get update \
         && wget https://code.jquery.com/jquery-3.2.1.slim.min.js \
         && wget https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js \
         && wget https://github.com/twbs/bootstrap/releases/download/v4.0.0-beta/bootstrap-4.0.0-beta-dist.zip \
-        && unzip bootstrap-4.0.0-beta-dist.zip -d /bootstrap \
+        && unzip bootstrap-4.0.0-beta-dist.zip -d bootstrap/ \
         && rm bootstrap-4.0.0-beta-dist.zip
 
 ENV INSTALL_PATH /python/app
@@ -25,6 +25,6 @@ RUN pip install -r requirements.txt
 COPY config.py run.py uwsgi.ini ./
 COPY project/ project/
 
-RUN cd /
+RUN cd /python/app/project/static
 
 ENTRYPOINT ["uwsgi", "--ini", "uwsgi.ini"]
